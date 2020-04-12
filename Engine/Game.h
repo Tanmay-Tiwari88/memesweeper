@@ -42,6 +42,7 @@ private:
 	MainWindow& wnd;
 	Graphics gfx;
 	MemeField mf;
+	bool gameover = false;
 	/********************************/
 	/*  User Variables              */
 	/********************************/

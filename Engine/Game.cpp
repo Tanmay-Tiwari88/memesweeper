@@ -24,7 +24,7 @@ Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
 	gfx(wnd),
-	mf(50)
+	mf(10)
 {
 }
 
@@ -38,6 +38,26 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	if (!gameover)
+	{
+		while (!wnd.mouse.IsEmpty())
+		{
+			auto e = wnd.mouse.Read();
+			if (e.GetType() == Mouse::Event::Type::LPress)
+			{
+				gameover = mf.revealonclick(e.GetPos());
+			}
+			else if (e.GetType() == Mouse::Event::Type::RPress)
+			{
+				mf.flagonclick(e.GetPos());
+			}
+
+		}
+	}
+	else
+	{
+		mf.revealeallmemes();
+	}
 }
 
 void Game::ComposeFrame()

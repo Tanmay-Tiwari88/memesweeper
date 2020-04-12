@@ -20,6 +20,8 @@
  ******************************************************************************************/
 #pragma once
 #include <queue>
+#include"Vei2.h"
+#include"SpriteCodex.h"
 
 class Mouse
 {
@@ -70,9 +72,9 @@ public:
 		{
 			return type;
 		}
-		std::pair<int,int> GetPos() const
+		Vei2 GetPos() const
 		{
-			return{ x,y };
+			return{ x/SpriteCodex::tileSize,y /SpriteCodex::tileSize};
 		}
 		int GetPosX() const
 		{
