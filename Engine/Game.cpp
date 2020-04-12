@@ -20,11 +20,11 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "Game.h"
-
-Game::Game( MainWindow& wnd )
+Game::Game(MainWindow& wnd)
 	:
-	wnd( wnd ),
-	gfx( wnd )
+	wnd(wnd),
+	gfx(wnd),
+	mf(50)
 {
 }
 
@@ -42,4 +42,5 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+	mf.Drawmemefield(gfx);
 }
